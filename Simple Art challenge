@@ -1,0 +1,32 @@
+#python code challenge
+# you are selecting art for a client with special tastes
+# clients want only to be shown art with favorite colors.
+# blue(b), yellow(y) or red(r), but only one color per artpiece
+# so if a piece has blue, it must not contain yellow or red
+# write code to help you select pieces to show client.
+# all art available has been color-coded by your assistant.
+
+art = ['1ygb', '2gbw', '3ybg', '4mbg', '5bgy', '6grb', '7yrg', '8grm', '9owy']
+
+# output : 'Artworks 2, 4, 8, 9 can be shown to client'
+#len(art)
+#art[0][1:4]
+#for i in range(len(art)):
+#    print(art[i][1:4])
+
+new_list = []
+
+for x in art:
+    if ("b" in x) & ("y" not in x) & ("r" not in x):
+        new_list.append(x[0])
+    if ("y" in x) & ("b" not in x) & ("r" not in x):
+        new_list.append(x[0])
+    if ("r" in x) & ("b" not in x) & ("y" not in x):
+        new_list.append(x[0])
+        
+# new_list
+new_str = ''
+for i in new_list:
+    new_str = new_str + " , " + i
+# new_str_fin
+print("Artworks" + new_str[2:] + " can be shown to the client." )
