@@ -1,0 +1,27 @@
+
+##** Python Code Challenge - Twist Numbers **##
+# print out the reverse of the number with each digit doubled
+# example: 426 -> (reverse) 624 -> (double) 1248
+# list of numbers = [34, 243, 659, 517, 8, 74]
+# output should be: 'The twisted numbers are: 86, 684, 181012, 14210, 16, 148'
+
+numbers = [34, 243, 659, 517, 8, 74]
+def reverse_num(i):
+    reversed_number = 0
+    while i > 0:
+        digit = i % 10
+        reversed_number = reversed_number * 10 + digit
+        i = int(i / 10)
+    return reversed_number
+
+list_num = []
+for i in numbers:
+    list_num.append(reverse_num(i)*2)
+list_num
+
+new_str = ""
+for i in list_num:
+    new_str = new_str + ", " + str(i)
+new_str
+
+print('The twisted numbers are: ' + new_str[2:])
