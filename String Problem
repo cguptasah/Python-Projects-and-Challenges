@@ -1,0 +1,13 @@
+key_words = ['a', 'the', 'to', 'what']
+mess = '''what holy grail - the witch scene: she turned me into a newt. to a newt? it got better.'''
+
+# output
+#'a is surrounded by into and newt.'
+#'a is surrounded by to and newt?'
+#'the is surrounded by - and witch'
+#'to is surrounded by newt. and a'
+
+for i, word in enumerate(mess.split(' ')):
+        if word in key_words and mess.split(' ').index(word) not in [(len(list(enumerate(mess.split(' '))))-1) , (mess.split(' ').index(word) != 0)]:
+            print(word + ' is surrounded by ' + mess.split(' ')[i -1] + ' and ' + mess.split(' ')[i + 1])
+            
